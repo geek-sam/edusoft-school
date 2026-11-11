@@ -250,7 +250,7 @@ export default function StudentLife() {
                     </div>
 
                     <p className="mt-7 text-xs font-semibold uppercase tracking-[0.18em] text-[#B8871E]">
-                      {experience.subtitle || "Student Experience"}
+                      {"Student Experience"}
                     </p>
 
                     <h3 className="mt-3   text-3xl leading-tight sm:text-4xl">

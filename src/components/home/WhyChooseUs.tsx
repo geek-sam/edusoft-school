@@ -1,16 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import {
-  ArrowUpRight,
-  GraduationCap,
-  Users,
-  Trophy,
-  //   BookOpen,
-  Lightbulb,
-  ShieldCheck,
-  //   HeartHandshake,
-  Star,
-} from "lucide-react";
+import { GraduationCap, Users, Lightbulb, ShieldCheck } from "lucide-react";
 
 const differentiators = [
   {

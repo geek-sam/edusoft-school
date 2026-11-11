@@ -105,7 +105,7 @@ const MainHeader = () => {
                   ) : null}
                 </Link>
 
-                {item.children?.length > 0 && (
+                {/* {item.children?.length > 0 && (
                   <div className="invisible absolute left-0 top-[75%] w-60 translate-y-2 rounded-xl border border-gray-100 bg-white p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                     {item.children.map((child) => (
                       <Link
@@ -117,7 +117,7 @@ const MainHeader = () => {
                       </Link>
                     ))}
                   </div>
-                )}
+                )} */}
               </div>
             ))}
           </nav>
@@ -180,11 +180,11 @@ const MainHeader = () => {
                     )}
                   </div>
 
-                  {activeDropdown === item.label && (
+                  {/* {activeDropdown === item.label && (
                     <div className="mb-3 ml-3 border-l-2 border-amber-400 pl-4">
                       {item.children.map((child) => (
                         <Link
-                          key={child.label}
+                          // key={child.label}
                           to={child.href}
                           onClick={() => setMobileOpen(false)}
                           className="block py-2 text-sm text-gray-600 hover:text-[#172B4D]"
@@ -193,7 +193,7 @@ const MainHeader = () => {
                         </Link>
                       ))}
                     </div>
-                  )}
+                  )} */}
                 </div>
               ))}
 
