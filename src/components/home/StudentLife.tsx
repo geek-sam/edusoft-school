@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import {
   ArrowUpRight,
-  ArrowRight,
   Palette,
   Trophy,
   CalendarDays,
