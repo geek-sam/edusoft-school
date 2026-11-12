@@ -104,59 +104,23 @@ const WebsiteLayout = () => {
 
         {/* Facilities */}
         <Route path="/facilities" element={<Facilities />} />
-        <Route
-          path="/facilities/safety"
-          element={<Page title="Safety & Security" />}
-        />
 
         {/* Student Life */}
         <Route path="/student-life" element={<StudentLife />} />
 
         {/* News & Events */}
         <Route path="/news-events" element={<NewsEvents />} />
-        <Route
-          path="/news-events/:slug"
-          element={<Page title="News & Event Details" />}
-        />
-        <Route
-          path="/events/calendar"
-          element={<Page title="Event Calendar" />}
-        />
 
         {/* Gallery */}
         <Route path="/gallery" element={<Gallery />} />
-        <Route
-          path="/gallery/photos"
-          element={<Page title="Photo Gallery" />}
-        />
-        <Route
-          path="/gallery/videos"
-          element={<Page title="Video Gallery" />}
-        />
 
         {/* Contact */}
         <Route path="/contact" element={<Contact />} />
-        <Route
-          path="/contact/enquiry"
-          element={<Page title="General Enquiry" />}
-        />
 
         {/* Parent & Student Corner */}
         <Route
           path="/parent-student"
           element={<Page title="Parent & Student Corner" />}
-        />
-        <Route
-          path="/parent-student/notices"
-          element={<Page title="School Notices" />}
-        />
-        <Route
-          path="/parent-student/calendar"
-          element={<Page title="Academic Calendar" />}
-        />
-        <Route
-          path="/parent-student/results"
-          element={<Page title="Examination & Results" />}
         />
 
         {/* Parent Portal */}

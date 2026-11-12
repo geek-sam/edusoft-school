@@ -169,7 +169,7 @@ export default function Admissions() {
     <main className="bg-white text-[#172B4D]">
       {/* Hero */}
 
-      <section className="relative bg-[url('../images/campus.jpg')] bg-cover bg-center bg-no-repeat">
+      <section className="relative bg-[url('../images/admission.jpg')] bg-cover bg-center bg-no-repeat">
         <div className="absolute inset-0 bg-[#000]/65" />
         <div className="relative z-10 mx-auto max-w-7xl px-5 pb-16 pt-8 sm:px-8 md:pb-20 lg:px-10 lg:pt-10">
           <Breadcrumb

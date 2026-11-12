@@ -2,127 +2,161 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const heroImages = [
+const heroSlides = [
   {
-    src: "/images/hero-students-1.jpg",
+    image: "/images/hero-students-1.jpg",
     alt: "Students interacting on the school campus",
+    eyebrow: "WELCOME TO OUR SCHOOL",
+    heading: "Where Young",
+    highlight: "Minds",
+    remaining: "Grow Into Bright Futures.",
+    description:
+      "Our school provides a dynamic environment that empowers students to explore, learn, and reach new heights.",
+    buttonText: "Explore Admissions",
+    buttonLink: "/admissions",
   },
   {
-    src: "/images/hero-students-2.jpg",
+    image: "/images/hero-students-2.jpg",
     alt: "Students learning together in a bright environment",
+    eyebrow: "LEARNING BEYOND CLASSROOMS",
+    heading: "Discover",
+    highlight: "Potential",
+    remaining: "Through Every Experience.",
+    description:
+      "We inspire curiosity, encourage creativity, and provide students with the skills they need to succeed in a changing world.",
+    buttonText: "Discover Our School",
+    buttonLink: "/about",
   },
   {
-    src: "/images/hero-students-3.jpg",
+    image: "/images/hero-students-3.jpg",
     alt: "Students enjoying their school experience",
+    eyebrow: "BUILDING TOMORROW'S LEADERS",
+    heading: "Creating",
+    highlight: "Opportunities",
+    remaining: "For A Brighter Tomorrow.",
+    description:
+      "Every child deserves the opportunity to shine. Together, we nurture confidence, character, and lifelong learning.",
+    buttonText: "Explore Academics",
+    buttonLink: "/academics",
   },
 ];
 
 const HeroSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
 
-  // Automatic image carousel
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveSlide((current) => (current + 1) % heroImages.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   const nextSlide = () => {
-    setActiveSlide((current) => (current + 1) % heroImages.length);
+    setActiveSlide((current) => (current + 1) % heroSlides.length);
   };
 
   const prevSlide = () => {
     setActiveSlide(
-      (current) => (current - 1 + heroImages.length) % heroImages.length,
+      (current) => (current - 1 + heroSlides.length) % heroSlides.length,
     );
   };
 
-  return (
-    <section className="w-full overflow-hidden bg-white">
-      {/* Hero Content */}
-      <div className="mx-auto max-w-7xl px-6 py-16 md:py-20 lg:px-10 lg:py-20">
-        <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-10">
-          {/* Heading */}
-          <div className="md:col-span-7">
-            <h1 className="max-w-3xl text-5xl font-medium leading-[1.08] tracking-tight text-[#172B4D] sm:text-5xl lg:text-6xl">
-              Where Young <br />
-              <span className="text-[#D69E27]"> Minds </span>
-              Grow Into
-              <span className="block">Bright Futures.</span>
-            </h1>
-          </div>
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
-          {/* Description and CTA */}
-          <div className="md:col-span-5 md:pl-4 lg:pl-10">
-            <p className="max-w-md text-base leading-7 text-[#344A63] sm:text-lg sm:leading-8">
-              Our school provides a dynamic environment that empowers students
-              to reach new heights.
+  return (
+    <section className="relative h-[600px] w-full overflow-hidden bg-[#172B4D] sm:h-[650px] lg:h-[700px]">
+      {/* Background Slides */}
+      {heroSlides.map((slide, index) => (
+        <div
+          key={slide.image}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            activeSlide === index ? "z-10 opacity-100" : "z-0 opacity-0"
+          }`}
+          aria-hidden={activeSlide !== index}
+        >
+          <img
+            src={slide.image}
+            alt={slide.alt}
+            className="h-full w-full object-cover"
+            loading={index === 0 ? "eager" : "lazy"}
+          />
+
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#101E35]/90 via-[#101E35]/60 to-[#101E35]/20" />
+          <div className="absolute inset-0 bg-black/10" />
+        </div>
+      ))}
+
+      {/* Hero Content */}
+      <div className="relative z-20 mx-auto flex h-full max-w-7xl items-center px-6 lg:px-10">
+        {heroSlides.map((slide, index) => (
+          <div
+            key={slide.image}
+            className={`absolute max-w-3xl pr-6 transition-all duration-700 ${
+              activeSlide === index
+                ? "translate-y-0 opacity-100"
+                : "translate-y-5 opacity-0 pointer-events-none"
+            }`}
+            aria-hidden={activeSlide !== index}
+          >
+            <span className="mb-5 block text-xs font-semibold tracking-[0.25em] text-[#D69E27] sm:text-sm">
+              {slide.eyebrow}
+            </span>
+
+            <h1 className="text-4xl font-medium leading-[1.12] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+              {slide.heading}{" "}
+              <span className="text-[#D69E27]">{slide.highlight}</span>{" "}
+              {slide.remaining}
+            </h1>
+
+            <p className="mt-6 max-w-xl text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
+              {slide.description}
             </p>
 
             <Link
-              to="/admissions"
-              className="mt-7 inline-flex min-w-[190px] items-center justify-center bg-[#172B4D] px-8 py-3 text-sm font-semibold text-white transition duration-300 hover:bg-[#D69E27] hover:text-[#172B4D]"
+              to={slide.buttonLink}
+              tabIndex={activeSlide === index ? 0 : -1}
+              className="mt-8 inline-flex min-w-[190px] items-center justify-center bg-[#D69E27] px-8 py-4 text-sm font-semibold text-[#172B4D] transition duration-300 hover:bg-white"
             >
-              Explore Admissions
+              {slide.buttonText}
             </Link>
           </div>
-        </div>
+        ))}
       </div>
 
-      {/* Hero Image Carousel */}
-      <div className="group relative h-[320px] w-full overflow-hidden bg-gray-100 sm:h-[430px] lg:h-[500px] xl:h-[510px]">
-        {/* Image Slides */}
-        {heroImages.map((image, index) => (
-          <img
-            key={image.src}
-            src={image.src}
-            alt={image.alt}
-            className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
-              activeSlide === index ? "z-10 opacity-100" : "z-0 opacity-0"
-            }`}
-            loading={index === 0 ? "eager" : "lazy"}
-          />
-        ))}
-
-        {/* Previous Button */}
+      {/* Navigation */}
+      <div className="absolute bottom-8 right-6 z-30 flex items-center gap-3 sm:right-10 lg:right-16">
         <button
           type="button"
           onClick={prevSlide}
           aria-label="Previous slide"
-          className="absolute left-5 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/80 text-[#172B4D] opacity-0 shadow-md transition hover:bg-white group-hover:opacity-100 sm:left-8 sm:h-12 sm:w-12"
+          className="flex h-11 w-11 items-center justify-center border border-white/50 text-white transition hover:bg-white hover:text-[#172B4D]"
         >
-          <ChevronLeft size={23} />
+          <ChevronLeft size={22} />
         </button>
 
-        {/* Next Button */}
         <button
           type="button"
           onClick={nextSlide}
           aria-label="Next slide"
-          className="absolute right-5 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/80 text-[#172B4D] opacity-0 shadow-md transition hover:bg-white group-hover:opacity-100 sm:right-8 sm:h-12 sm:w-12"
+          className="flex h-11 w-11 items-center justify-center border border-white/50 text-white transition hover:bg-white hover:text-[#172B4D]"
         >
-          <ChevronRight size={23} />
+          <ChevronRight size={22} />
         </button>
+      </div>
 
-        {/* Carousel Indicators */}
-        <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2.5">
-          {heroImages.map((_, index) => (
-            <button
-              key={index}
-              type="button"
-              onClick={() => setActiveSlide(index)}
-              aria-label={`Go to slide ${index + 1}`}
-              aria-current={activeSlide === index ? "true" : undefined}
-              className={`h-1.5 rounded-full transition-all duration-500 ${
-                activeSlide === index
-                  ? "w-9 bg-white"
-                  : "w-4 bg-white/60 hover:bg-white"
-              }`}
-            />
-          ))}
-        </div>
+      {/* Slide Indicators */}
+      <div className="absolute bottom-12 left-6 z-30 flex items-center gap-3 sm:left-10 lg:left-16">
+        {heroSlides.map((_, index) => (
+          <button
+            key={index}
+            type="button"
+            onClick={() => setActiveSlide(index)}
+            aria-label={`Go to slide ${index + 1}`}
+            aria-current={activeSlide === index ? "true" : undefined}
+            className={`h-1 transition-all duration-500 ${
+              activeSlide === index
+                ? "w-12 bg-[#D69E27]"
+                : "w-6 bg-white/50 hover:bg-white"
+            }`}
+          />
+        ))}
       </div>
     </section>
   );

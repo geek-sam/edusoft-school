@@ -218,7 +218,7 @@ export default function Contact() {
   return (
     <main className="overflow-hidden bg-white">
       {/* Hero */}
-      <section className="relative bg-[url('../images/campus.jpg')] bg-cover bg-center bg-no-repeat">
+      <section className="relative bg-[url('../images/contact-hero.png')] bg-cover bg-center bg-no-repeat">
         <div className="absolute inset-0 bg-[#000]/65" />
         <div className="mx-auto relative z-10 max-w-7xl px-5 pb-16 pt-8 sm:px-8 lg:px-12 lg:pb-24">
           <Breadcrumb items={[{ label: "Contact Us" }]} className="mb-16" />

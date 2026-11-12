@@ -16,8 +16,8 @@ const studentActivities = [
     subtitle: "Explore Your Interests",
     description:
       "From creative workshops to student clubs, discover opportunities to explore interests and develop new skills.",
-    image: "/images/student-activities.jpg",
-    link: "/student-life/activities",
+    image: "/images/student-activities.png",
+    // link: "/student-life/activities",
     icon: Palette,
   },
   {
@@ -26,8 +26,8 @@ const studentActivities = [
     subtitle: "Play. Compete. Achieve.",
     description:
       "Build confidence, teamwork, and discipline through sports, fitness, and friendly competition.",
-    image: "/images/student-sports.jpg",
-    link: "/student-life/sports",
+    image: "/images/sports.png",
+    // link: "/student-life/sports",
     icon: Trophy,
   },
   {
@@ -36,8 +36,8 @@ const studentActivities = [
     subtitle: "Moments That Matter",
     description:
       "Be part of memorable school celebrations, competitions, exhibitions, and special occasions.",
-    image: "/images/student-events.jpg",
-    link: "/student-life/events",
+    image: "/images/event-celebration.png",
+    // link: "/student-life/events",
     icon: CalendarDays,
   },
   {
@@ -46,8 +46,8 @@ const studentActivities = [
     subtitle: "Celebrate Every Expression",
     description:
       "Express creativity and celebrate traditions through music, dance, art, theatre, and performances.",
-    image: "/images/student-cultural.jpg",
-    link: "/student-life/cultural",
+    image: "/images/student-cultural.png",
+    // link: "/student-life/cultural",
     icon: Music2,
   },
 ];
@@ -139,9 +139,9 @@ const StudentLife = () => {
             const Icon = activity.icon;
 
             return (
-              <Link
+              <div
                 key={activity.number}
-                to={activity.link}
+                // to={activity.link}
                 className="group flex flex-col overflow-hidden border border-gray-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-[#D69E27] hover:shadow-xl"
               >
                 {/* Image */}
@@ -178,7 +178,7 @@ const StudentLife = () => {
                     {activity.description}
                   </p>
 
-                  <div className="mt-6 flex items-center justify-between border-t border-gray-100 pt-4">
+                  {/* <div className="mt-6 flex items-center justify-between border-t border-gray-100 pt-4">
                     <span className="text-xs font-semibold text-[#172B4D] transition group-hover:text-[#B8871E]">
                       Explore More
                     </span>
@@ -187,9 +187,9 @@ const StudentLife = () => {
                       size={17}
                       className="text-[#172B4D] transition-transform group-hover:translate-x-1 group-hover:text-[#B8871E]"
                     />
-                  </div>
+                  </div> */}
                 </div>
-              </Link>
+              </div>
             );
           })}
         </div>

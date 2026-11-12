@@ -196,8 +196,8 @@ export default function NewsEvents() {
       {/* =========================================
           PAGE HERO
       ========================================= */}
-      <section className="relative bg-[url('../images/campus.jpg')] bg-cover bg-center bg-no-repeat">
-        <div className="absolute inset-0 bg-[#000]/65" />
+      <section className="relative bg-[url('../images/school-event.png')] bg-cover bg-center bg-no-repeat">
+        <div className="absolute inset-0 bg-[#000]/75" />
         <div className="relative z-10 mx-auto max-w-7xl px-5 pb-16 pt-8 sm:px-8 md:pb-20 lg:px-10 lg:pt-10">
           <Breadcrumb
             items={[{ label: "News & Events" }]}
@@ -282,7 +282,7 @@ export default function NewsEvents() {
 
             <div className="relative min-h-[220px] bg-[#263D60] md:col-span-4 md:min-h-full">
               <img
-                src="/images/middle.png"
+                src="/images/academics-middle.png"
                 alt="Students at school"
                 className="absolute inset-0 h-full w-full object-cover opacity-70"
                 loading="lazy"

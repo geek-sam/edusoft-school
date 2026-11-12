@@ -232,10 +232,10 @@ export default function Academics() {
     <main className="overflow-hidden bg-white text-[#172B4D]">
       {/* 01. Page Hero */}
       <section
-        className="relative bg-[url('../images/campus.jpg')] bg-cover bg-center bg-no-repeat"
+        className="relative bg-[url('../images/academics-student-support.png')] bg-cover bg-center bg-no-repeat"
         // style={{ backgroundImage: "url('../campus.png')" }}
       >
-        <div className="absolute inset-0 bg-[#000]/65" />
+        <div className="absolute inset-0 bg-[#000]/75" />
         <div className="z-10 relative mx-auto max-w-7xl px-5 pb-16 pt-8 sm:px-8 lg:px-12 lg:pb-24">
           <Breadcrumb items={[{ label: "Academics" }]} className="mb-16" />
 

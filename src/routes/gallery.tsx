@@ -30,7 +30,7 @@ type GalleryImage = {
 const galleryImages: GalleryImage[] = [
   {
     id: 1,
-    src: "/images/campus1.jpg",
+    src: "/images/campus3.jpg",
     title: "Our School Campus",
     category: "Campus",
     description: "A welcoming environment for learning and growth.",
@@ -46,7 +46,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: 3,
-    src: "/images/gallery-activities-1.jpg",
+    src: "/images/academics-pre-primary.png",
     title: "Creative Exploration",
     category: "Activities",
     description: "Encouraging creativity and self-expression.",
@@ -54,7 +54,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: 4,
-    src: "/images/gallery-sports-1.jpg",
+    src: "/images/sports.png",
     title: "Beyond the Classroom",
     category: "Sports",
     description: "Building teamwork through sports.",
@@ -62,7 +62,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: 5,
-    src: "/images/gallery-events-1.jpg",
+    src: "/images/event-celebration.png",
     title: "Celebrating Together",
     category: "Events",
     description: "Memorable moments from school celebrations.",
@@ -70,7 +70,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: 6,
-    src: "/images/gallery-campus-2.jpg",
+    src: "/images/campus2.jpg",
     title: "Spaces to Discover",
     category: "Campus",
     description: "A closer look at our school facilities.",
@@ -78,7 +78,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: 7,
-    src: "/images/gallery-activities-2.jpg",
+    src: "/images/leadership.png",
     title: "Learning by Doing",
     category: "Activities",
     description: "Students exploring ideas through activities.",
@@ -86,7 +86,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: 8,
-    src: "/images/gallery-sports-2.jpg",
+    src: "/images/academics-senior-secondary.png",
     title: "Team Spirit",
     category: "Sports",
     description: "Developing confidence and sportsmanship.",
@@ -94,7 +94,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: 9,
-    src: "/images/gallery-classroom-2.jpg",
+    src: "/images/academics-learning.png",
     title: "Curiosity in Action",
     category: "Classrooms",
     description: "An environment that inspires discovery.",
@@ -102,7 +102,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: 10,
-    src: "/images/gallery-events-2.jpg",
+    src: "/images/student-cultural.png",
     title: "Special School Moments",
     category: "Events",
     description: "Celebrating our school community.",
@@ -110,7 +110,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: 11,
-    src: "/images/gallery-activities-3.jpg",
+    src: "/images/student-life-featured.png",
     title: "Growing Through Experiences",
     category: "Activities",
     description: "Opportunities to learn beyond textbooks.",
@@ -118,7 +118,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: 12,
-    src: "/images/gallery-campus-3.jpg",
+    src: "/images/campus1.jpg",
     title: "A Place to Belong",
     category: "Campus",
     description: "The spaces that bring our community together.",
@@ -196,8 +196,8 @@ export default function Gallery() {
     <>
       <main className="bg-white">
         {/* Page Hero */}
-        <section className="relative bg-[url('../images/campus.jpg')] bg-cover bg-center bg-no-repeat">
-          <div className="absolute inset-0 bg-[#000]/65" />
+        <section className="relative bg-[url('../images/academics-senior-secondary.png')] bg-cover bg-center bg-no-repeat">
+          <div className="absolute inset-0 bg-[#000]/75" />
           <div className="relative z-10 mx-auto max-w-7xl px-5 pb-14 pt-8 sm:px-8 md:pb-20 lg:px-10 lg:pt-10">
             <Breadcrumb
               items={[{ label: "Gallery" }]}
