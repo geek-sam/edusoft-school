@@ -26,7 +26,7 @@ const facultyMembers: FacultyMember[] = [
     designation: "Senior Teacher",
     department: "Mathematics",
     experience: "[X]+ Years Experience",
-    image: "/images/faculty-mathematics.jpg",
+    image: "/images/faculty-mathematics.png",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const facultyMembers: FacultyMember[] = [
     designation: "Senior Teacher",
     department: "Science",
     experience: "[X]+ Years Experience",
-    image: "/images/faculty-science.jpg",
+    image: "/images/faculty-science.png",
   },
   {
     id: 4,
